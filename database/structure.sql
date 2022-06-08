@@ -6,4 +6,4 @@ CREATE TABLE IF NOT EXISTS `ci_sessions` (
         KEY `ci_sessions_timestamp` (`timestamp`)
 );
 
-ALTER TABLE ci_sessions ADD PRIMARY KEY (id);
+ALTER TABLE ci_sessions ADD PRIMARY KEY (id, ip_address);
