@@ -55,7 +55,7 @@
  */
 	// define('ENVIRONMENT', isset($_SERVER['CI_ENV']) ? $_SERVER['CI_ENV'] : 'development');
 
-	if (strstr($_SERVER['HTTP_HOST'], 'dev.')) {
+	if ($_SERVER['SERVER_NAME'] != 'kecdemo.itchaiyaphum.com') {
 		define('ENVIRONMENT', 'development');
 	} else {
 		define('ENVIRONMENT', 'production');
