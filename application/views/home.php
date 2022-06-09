@@ -20,6 +20,7 @@
 		<div class="card">
 			<div class="card-body py-4">
 				<a href="#" class="btn btn-color1">หนังสือคำร้องขอฝึกอาชีพในสถานประกอบการ</a>
+				<a href="#" class="btn btn-color1 mt-4">แบบคำร้องแก้ไขผลการเรียน (0/มส)</a>
 			</div>
 		</div>
 	</div>

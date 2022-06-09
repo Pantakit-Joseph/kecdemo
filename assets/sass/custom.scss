@@ -17,10 +17,10 @@ $color4: #DAE1E7;
 
 
 $custom-colors: (
-	"color1": #142850,
-	"color2": #27496D,
-	"color3": #00909E,
-	"color4": #DAE1E7
+	"color1": $color1,
+	"color2": $color2,
+	"color3": $color3,
+	"color4": $color4
 );
 
 // Merge the maps
