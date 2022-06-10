@@ -235,9 +235,9 @@ defined('BASEPATH') or exit('No direct script access allowed');
 
 
 	<script type="text/javascript">
-		// window.onload = function() {
-		// window.print();
-		// }
+		window.onload = function() {
+			window.print();
+		}
 	</script>
 </body>
 
