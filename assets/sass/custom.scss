@@ -27,3 +27,7 @@ $custom-colors: (
 $theme-colors: map-merge($theme-colors, $custom-colors);
 
 @import "../../node_modules/bootstrap/scss/bootstrap";
+
+body {
+	background-color: #F7F5F2;
+}

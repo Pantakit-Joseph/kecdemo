@@ -23,7 +23,9 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 | a PHP script and you can easily do that on your own.
 |
 */
-$config['base_url'] = 'http://dev.kecdemo.itchaiyaphum.com/';
+
+$config['base_url'] = (isset($_SERVER['HTTPS']) ? "https://" : "http://")
+						. 'dev.kecdemo.itchaiyaphum.com/';
 
 /*
 |--------------------------------------------------------------------------
@@ -457,7 +459,7 @@ $config['global_xss_filtering'] = FALSE;
 | 'csrf_regenerate' = Regenerate token on every submission
 | 'csrf_exclude_uris' = Array of URIs which ignore CSRF checks
 */
-$config['csrf_protection'] = TRUE;
+$config['csrf_protection'] = FALSE;
 $config['csrf_token_name'] = 'csrf_token';
 $config['csrf_cookie_name'] = 'csrf_cookie';
 $config['csrf_expire'] = 7200;

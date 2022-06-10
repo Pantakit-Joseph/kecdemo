@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="th">
 
 <head>
 	<meta charset="UTF-8">
@@ -19,7 +19,7 @@
 
 		<div class="card">
 			<div class="card-body py-4">
-				<a href="#" class="btn btn-color1">หนังสือคำร้องขอฝึกอาชีพในสถานประกอบการ</a>
+				<a href="<?= base_url('form/request_internship') ?>" class="btn btn-color1">หนังสือคำร้องขอฝึกอาชีพในสถานประกอบการ</a>
 				<a href="#" class="btn btn-color1 mt-4">แบบคำร้องแก้ไขผลการเรียน (0/มส)</a>
 			</div>
 		</div>
