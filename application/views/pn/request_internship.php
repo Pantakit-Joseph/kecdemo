@@ -18,12 +18,45 @@ defined('BASEPATH') or exit('No direct script access allowed');
 <body>
 	<div class="pagebreak">
 		<div class="data">
-			<div class="bg" style="width: 50mm; top: 63.5mm; left: 55mm;">
-				<?= $in['firstname'] . ' ' . $in['lastname'] ?>
+			<!-- ข้อมูลนักเรียน -->
+			<div class="bg" style="width: 50mm; top: 42.5mm; left: 55mm;">
+				<?= (isset($in['title']) ? $in['title'] : '') . (isset($in['FirstName']) ? $in['FirstName'] : '') . ' ' . (isset($in['LastName']) ? $in['LastName'] : '') ?>
+
 			</div>
-			<div class="bg" style="width: 50mm; top: 63.5mm; left: 125mm;">
-				<?= $in['std_id'] ?>
+			<div class="bg" style="width: 50mm; top: 42.5mm; left: 133mm;">
+				<?= isset($in['code']) ? $in['code'] : '' ?>
 			</div>
+			<div class="bg" style="width: 5mm; top: 50mm; left: 23mm;">
+				<?= '' ?>
+				<!-- ปวช -->
+			</div>
+			<div class="bg" style="width: 5mm; top: 50mm; left: 36mm;">
+				<?= '' ?>
+				<!-- ปวส -->
+			</div>
+			<div class="bg text-center" style="width: 7mm; top: 50mm; left: 53mm;">
+				<?= isset($in['group']) ? $in['group'] : '' ?>
+			</div>
+			<div class="bg" style="width: 7mm; top: 50mm; left: 67mm;">
+				<?= isset($in['dep']) ? $in['dep'] : '' ?>
+			</div>
+			<div class="bg" style="width: 50mm; top: 50mm; left: 92mm;">
+				<?= '' ?>
+			</div>
+			<div class="bg" style="width: 50mm; top: 50mm; left: 140mm;">
+				<?= '' ?>
+			</div>
+			<div class="bg" style="width: 50mm; top: 57mm; left: 38mm;">
+				<?= '' ?>
+			</div>
+			<div class="bg" style="width: 50mm; top: 57mm; left: 109mm;">
+				<?= '' ?>
+			</div>
+			<div class="bg" style="width: 50mm; top: 57mm; left: 109mm;">
+				<?= '' ?>
+			</div>
+
+
 			<div class="bg" style="width: 50mm; top: 70.5mm; left: 92mm;">
 				<?= '' ?>
 			</div>
@@ -65,7 +98,7 @@ defined('BASEPATH') or exit('No direct script access allowed');
 		</p>
 		<p class="indent">
 			ข้าพเจ้านาย/นางสาว..............................................................รหัสประจำตัว.........................................
-			<br>นักศึกษาระดับ ( ) ปวช. ( ) ปวส. ปีที่...........กลุ่ม................แผนกวิชา..................................คณะวิชา..........................
+			<br>นักศึกษาระดับ ( ) ปวช. ( ) ปวส. ปีที่.......กลุ่ม..........แผนกวิชา.......................................คณะวิชา...............................
 			<br>มีผลการเรียนเฉลี่ยสะสม...............มีความประสงค์ขอฝึกอาชีพ ภาคเรียนที่ ....... /............ถึงภาคเรียนที่....... /............
 			<br>ระหว่างวันที่................................................ถึงวันที่..................................................................
 		</p>

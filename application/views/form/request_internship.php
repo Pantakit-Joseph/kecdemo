@@ -13,6 +13,13 @@
 
 	<!-- Custom styles for this template-->
 	<link href="<?= base_url('assets/css/sb-admin-2.min.css') ?>" rel="stylesheet">
+	<style>
+		.bg-register-image {
+			background: url("<?= base_url('assets/img/caleb-george-5sF6NrB1MEg-unsplash.jpg') ?>");
+			background-position: center;
+			background-size: cover;
+		}
+	</style>
 </head>
 
 <body>
@@ -31,7 +38,7 @@
 								<div class="text-center">
 									<h1 class="h4 text-gray-900 mb-4">หนังสือคำร้องขอฝึกอาชีพในสถานประกอบการ</h1>
 								</div>
-								<form class="user">
+								<form class="user" action="<?= site_url('pn/request_internship') ?>" method="post" enctype="multipart/form-data">
 									<div class="form-group row">
 										<div class="col-sm-4 mb-3 mb-sm-0">
 											<input type="text" class="form-control form-control-user" name="title" placeholder="คำนำหน้า">
@@ -192,9 +199,9 @@
 										<input type="file" class="form-control form-control-file " name="parent_teacher1">
 									</div>
 
-									<a href="login.html" class="btn btn-primary btn-user btn-block">
+									<button type="submit" class="btn btn-primary btn-user btn-block">
 										ส่งหนังสือคำร้อง
-									</a>
+									</button>
 									<hr>
 								</form>
 								<hr>
