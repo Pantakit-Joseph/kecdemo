@@ -18,42 +18,12 @@ defined('BASEPATH') or exit('No direct script access allowed');
 <body>
 	<div class="pagebreak">
 		<div class="data">
-			<!-- ข้อมูลนักเรียน -->
-			<div class="bg" style="width: 50mm; top: 42.5mm; left: 55mm;">
-				<?= 'นายพันธกิจ มะลิทอง' ?>
+			<div class="bg" style="width: 50mm; top: 63.5mm; left: 55mm;">
+				<?= $in['firstname'] . ' ' . $in['lastname'] ?>
 			</div>
-			<div class="bg" style="width: 50mm; top: 42.5mm; left: 133mm;">
-				<?= '65309010002' ?>
+			<div class="bg" style="width: 50mm; top: 63.5mm; left: 125mm;">
+				<?= $in['std_id'] ?>
 			</div>
-			<div class="bg" style="width: 5mm; top: 50mm; left: 23mm;">
-				<?= '&check;' ?> <!-- ปวช -->
-			</div>
-			<div class="bg" style="width: 5mm; top: 50mm; left: 36mm;">
-				<?= '&check;' ?> <!-- ปวส -->
-			</div>
-			<div class="bg text-center" style="width: 7mm; top: 50mm; left: 53mm;">
-				<?= '1' ?> 
-			</div>
-			<div class="bg" style="width: 7mm; top: 50mm; left: 67mm;">
-				<?= 'D1' ?> 
-			</div>
-			<div class="bg" style="width: 50mm; top: 50mm; left: 92mm;">
-				<?= 'เทคโนโลยีสารสนเทศ' ?> 
-			</div>
-			<div class="bg" style="width: 50mm; top: 50mm; left: 140mm;">
-				<?= 'นักพัฒนาซอฟต์แวร์คอมพิวเตอร์' ?> 
-			</div>
-			<div class="bg" style="width: 50mm; top: 57mm; left: 38mm;">
-				<?= '3.91' ?> 
-			</div>
-			<div class="bg" style="width: 50mm; top: 57mm; left: 109mm;">
-				<?= '2' ?> 
-			</div>
-			<div class="bg" style="width: 50mm; top: 57mm; left: 109mm;">
-				<?= '2' ?> 
-			</div>
-
-
 			<div class="bg" style="width: 50mm; top: 70.5mm; left: 92mm;">
 				<?= '' ?>
 			</div>
@@ -95,7 +65,7 @@ defined('BASEPATH') or exit('No direct script access allowed');
 		</p>
 		<p class="indent">
 			ข้าพเจ้านาย/นางสาว..............................................................รหัสประจำตัว.........................................
-			<br>นักศึกษาระดับ ( ) ปวช. ( ) ปวส. ปีที่.......กลุ่ม..........แผนกวิชา.......................................คณะวิชา...............................
+			<br>นักศึกษาระดับ ( ) ปวช. ( ) ปวส. ปีที่...........กลุ่ม................แผนกวิชา..................................คณะวิชา..........................
 			<br>มีผลการเรียนเฉลี่ยสะสม...............มีความประสงค์ขอฝึกอาชีพ ภาคเรียนที่ ....... /............ถึงภาคเรียนที่....... /............
 			<br>ระหว่างวันที่................................................ถึงวันที่..................................................................
 		</p>
@@ -233,7 +203,7 @@ defined('BASEPATH') or exit('No direct script access allowed');
 
 	<script type="text/javascript">
 		// window.onload = function() {
-		// 	window.print();
+		// window.print();
 		// }
 	</script>
 </body>
