@@ -143,3 +143,5 @@ application/logs/*
 !application/*/.htaccess
 
 application/config/production/
+
+!assets/vendor/
