@@ -12,7 +12,7 @@ defined('BASEPATH') or exit('No direct script access allowed');
 
 	<link rel="stylesheet" href="<?= base_url('assets/font/font.css') ?>">
 	<link rel="stylesheet" href="<?= base_url('assets/css/reset.css') ?>">
-	<link rel="stylesheet" href="<?= base_url('assets/css/print/request_internship.css') ?>">
+	<link rel="stylesheet" href="<?= base_url('assets/css/print/request_internship.css?v=1') ?>">
 </head>
 
 <body>
