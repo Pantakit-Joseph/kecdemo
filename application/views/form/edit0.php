@@ -5,7 +5,7 @@
 	<meta charset="UTF-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>หนังสือคำร้องขอฝึกอาชีพในสถานประกอบการ</title>
+	<title>แบบคำร้องแก้ไขผลการเรียน</title>
 
 	<!-- Custom fonts for this template-->
 	<link href="<?= base_url('assets/vendor/fontawesome-free/css/all.min.css') ?>" rel="stylesheet" type="text/css">
@@ -39,36 +39,59 @@
 									<h1 class="h4 text-gray-900 mb-4">หนังสือคำร้องแก้ไขผลการเรียน</h1>
 								</div>
 
-								<form class="user" action="correct_db.php" method="POST">
+								<form class="user" action="<?= site_url('form/edit_grade/submit') ?>" method="POST" enctype="multipart/form-data">
 									<p>ข้อมูลนักศึกษา</p>
 									<div class="form-group row">
 										<div class="col-sm-4 mb-3 mb-sm-0">
-											<input type="text" class="form-control form-control-user" name="title" placeholder="คำนำหน้า">
+											<select class="form-control" name="title" id="title" placeholder="คำนำหน้า">
+												<option value="" selected>คำนำหน้า</option>
+												<option value="นาย">นาย</option>
+												<option value="นาย">นาง</option>
+												<option value="นางสาว">นางสาว</option>
+											</select>
+											<!-- <input type="text" class="form-control form-control-user" name="title" placeholder="คำนำหน้า"> -->
 										</div>
 										<div class="col-sm-4 mb-3 mb-sm-0">
-											<input type="text" class="form-control form-control-user" name="FirstName" placeholder="ชื่อ">
+											<input type="text" class="form-control form-control-user" name="firstname" placeholder="ชื่อ">
 										</div>
 										<div class="col-sm-4">
-											<input type="text" class="form-control form-control-user" name="LastName" placeholder="นามสกุล">
+											<input type="text" class="form-control form-control-user" name="lastname" placeholder="นามสกุล">
 										</div>
 									</div>
 
 									<div class="form-group row">
 										<div class="col-sm-6 mb-3 mb-sm-0">
-											<input type="text" class="form-control form-control-user" name="std_code" placeholder="รหัสประจำตัวนักศึกษา">
+											<input type="number" class="form-control form-control-user" name="std_code" placeholder="รหัสประจำตัวนักศึกษา" required>
 										</div>
 
 										<div class="col-sm-6 mb-3 mb-sm-0">
-											<input type="text" class="form-control form-control-user" name="course" placeholder="นักเรียนนักศึกษาหลักสูตร">
+											<select class="form-control" name="class" id="class" placeholder="ระดับชั้น">
+												<option value="" selected>ระดับชั้น</option>
+												<option>ปวช</option>
+												<option>ปวส</option>
+											</select>
+											<!-- <input type="text" class="form-control form-control-user" name="course" placeholder="นักเรียนนักศึกษาหลักสูตร"> -->
 										</div>
 									</div>
 
 									<div class="form-group row">
 										<div class="col-sm-4 mb-3 mb-sm-0">
-											<input type="text" class="form-control form-control-user" name="dep" placeholder="แผนกวิชา">
+											<select class="form-control" name="dep" id="dep" placeholder="แผนกวิชา">
+												<option value="" selected>แผนกวิชา</option>
+												<?php foreach ($index->majors as $major) { ?>
+													<option value="<?= $major->id ?>"><?= $major->major_name ?></option>
+												<?php } ?>
+											</select>
+											<!-- <input type="text" class="form-control form-control-user" name="dep" placeholder="แผนกวิชา"> -->
 										</div>
 										<div class="col-sm-4 mb-3 mb-sm-0">
-											<input type="text" class="form-control form-control-user" name="class" placeholder="ชั้นปีที่">
+											<select class="form-control" name="year" id="year" placeholder="ชั้นปีที่">
+												<option value="" selected>ชั้นปีที่</option>
+												<option>1</option>
+												<option>2</option>
+												<option>3</option>
+											</select>
+											<!-- <input type="text" class="form-control form-control-user" name="year" placeholder="ชั้นปีที่"> -->
 										</div>
 										<div class="col-sm-4 mb-3 mb-sm-0">
 											<input type="text" class="form-control form-control-user" name="group" placeholder="กลุ่ม">
@@ -79,49 +102,66 @@
 									<p>มีความประสงค์ขอแก้ไขผลการเรียน 0 / มส </p>
 									<div class="form-group row">
 										<div class="col-sm-6 mb-3 mb-sm-0">
-											<input type="text" class="form-control form-control-user" name="term" placeholder="วิชา">
+											<input type="text" class="form-control form-control-user" name="subject" placeholder="วิชา">
 										</div>
 										<div class="col-sm-6 mb-3 mb-sm-0">
-											<input type="text" class="form-control form-control-user" name="year" placeholder="ปีการศึกษา">
+											<select class="form-control" name="year0" id="year0" placeholder="ปีการศึกษา">
+												<option value="" selected>ปีการศึกษา</option>
+												<?php foreach ($index->years as $year) { ?>
+													<option value="<?= $year ?>"><?= $year ?></option>
+												<?php } ?>
+											</select>
+											<!-- <input type="text" class="form-control form-control-user" name="year0" placeholder="ปีการศึกษา"> -->
 										</div>
 									</div>
 
 									<div class="form-group row">
 										<div class="col-sm-4 mb-3 mb-sm-0">
-											<input type="text" class="form-control form-control-user" name="subject" placeholder="ประจำภาคเรียนที่">
+											<select class="form-control" name="term" id="term" placeholder="ประจำภาคเรียนที่">
+												<option value="" selected>ประจำภาคเรียนที่</option>
+												<option>1</option>
+												<option>2</option>
+											</select>
+											<!-- <input type="text" class="form-control form-control-user" name="subject" placeholder="ประจำภาคเรียนที่"> -->
 										</div>
 										<div class="col-sm-4 mb-3 mb-sm-0">
 											<input type="text" class="form-control form-control-user" name="subject_code" placeholder="รหัสวิชา">
 										</div>
 										<div class="col-sm-4 mb-3 mb-sm-0">
-											<input type="text" class="form-control form-control-user" name="unit" placeholder="จำนวนหน่วยกิต">
+											<input type="number" class="form-control form-control-user" name="unit" placeholder="จำนวนหน่วยกิต">
 										</div>
 									</div>
 									<hr>
 									<p> ชื่อครูผู้สอน</p>
 									<div class="form-group row">
 										<div class="col-sm-4 mb-3 mb-sm-0">
-											<input type="text" class="form-control form-control-user" name="title_te" placeholder="คำนำหน้า">
+											<select class="form-control" name="title_te" id="title_te" placeholder="คำนำหน้า">
+												<option value="" selected>คำนำหน้า</option>
+												<option value="นาย">นาย</option>
+												<option value="นาย">นาง</option>
+												<option value="นางสาว">นางสาว</option>
+											</select>
+											<!-- <input type="text" class="form-control form-control-user" name="title_te" placeholder="คำนำหน้า"> -->
 										</div>
 										<div class="col-sm-4 mb-3 mb-sm-0">
-											<input type="text" class="form-control form-control-user" name="FirstName_te" placeholder="ชื่อ">
+											<input type="text" class="form-control form-control-user" name="firstname_te" placeholder="ชื่อ">
 										</div>
 										<div class="col-sm-4 mb-3 mb-sm-0">
-											<input type="text" class="form-control form-control-user" name="LastName_te" placeholder="นามสกุล">
+											<input type="text" class="form-control form-control-user" name="lastname_te" placeholder="นามสกุล">
 										</div>
 									</div>
 									<div class="form-group">
 
 										<div class="form-group">
 											<p class="custom-file-input-label">ลายเซ็นต์ผู้ยื่นคำร้อง</p>
-											<input type="file" class="form-control form-control-file " name="student_signature">
+											<input type="file" class="form-control form-control-file" name="std_signature" accept="image/png, image/jpeg">
 										</div>
 									</div>
 									<hr>
-									<div class="form-group">
+									<!-- <div class="form-group">
 										<p class="custom-file-input-label">ลายเซ็นต์ครูที่ปรึกษา</p>
-										<input type="file" class="form-control form-control-file " name="teacher_signature">
-									</div>
+										<input type="file" class="form-control form-control-file " name="teacher_signature"  name="parent_signature" accept="image/png, image/jpeg">
+									</div> -->
 
 									<button class="btn btn-primary btn-user btn-block" type="submit">
 										ส่งหนังสือคำร้อง

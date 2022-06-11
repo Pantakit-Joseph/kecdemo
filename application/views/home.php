@@ -20,7 +20,7 @@
 		<div class="card">
 			<div class="card-body py-4">
 				<a href="<?= base_url('form/request_internship') ?>" class="btn btn-color1">หนังสือคำร้องขอฝึกอาชีพในสถานประกอบการ</a>
-				<a href="#" class="btn btn-color1 mt-4">แบบคำร้องแก้ไขผลการเรียน (0/มส)</a>
+				<a href="<?= base_url('form/edit_grade') ?>" class="btn btn-color1 mt-4">แบบคำร้องแก้ไขผลการเรียน (0/มส)</a>
 			</div>
 		</div>
 	</div>
