@@ -107,6 +107,7 @@
 									<p>มีความประสงค์ขอฝึกงาน</p>
 									<div class="form-group row">
 										<div class="col-sm-6 mb-3 mb-sm-0">
+											จาก
 											<select class="form-control" name="year_form" id="year_form" placeholder="ภาคเรียนที่">
 												<option value="" selected>ภาคเรียนที่</option>
 												<?php foreach ($index->years as $year) { ?>
@@ -115,7 +116,9 @@
 											</select>
 											<!-- จาก <input type="text" class="form-control form-control-user" name="year_form" placeholder="ภาคเรียนที่"> -->
 										</div>
+
 										<div class="col-sm-6 mb-3 mb-sm-0">
+											ถึง
 											<select class="form-control" name="year_to" id="year_to" placeholder="ภาคเรียนที่">
 												<option value="" selected>ภาคเรียนที่</option>
 												<?php foreach ($index->years as $year) { ?>

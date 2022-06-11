@@ -66,13 +66,11 @@ class Request_internship_model extends CI_Model
 				'prefix' => $in->title,
 				'firstname' => $in->firstname,
 				'lastname' => $in->lastname,
-				'std_class' => $in->class,
-				'year' => null,
+				'std_class' => $in->class, 
 				'std_group' => $in->group,
 				'majors' => $in->dep,
 				'minors' => $in->minor,
-				'grade' => $in->grade,
-				'semester' => null,
+				'grade' => $in->grade, 
 				'std_img' => $this->_uploadimg('std_signature')
 			]);
 		} else {
@@ -82,12 +80,10 @@ class Request_internship_model extends CI_Model
 				'firstname' => $in->firstname,
 				'lastname' => $in->lastname,
 				'std_class' => $in->class,
-				'year' => null,
 				'std_group' => $in->group,
 				'majors' => $in->dep,
 				'minors' => $in->minor,
-				'grade' => $in->grade,
-				'semester' => null,
+				'grade' => $in->grade, 
 				'std_img' => $this->_uploadimg('std_signature')
 			]);
 		}
@@ -133,12 +129,6 @@ class Request_internship_model extends CI_Model
 				'std_id' => $user_id,
 				'parent_comment' => $in->parent,
 				'parent_img' => $this->_uploadimg('parent_signature'),
-				'department_comment' => null,
-				'department_img' => null,
-				'Counselor_comment' => null,
-				'Counselor_img' => null,
-				'during_day' => null,
-				'up_day' => null
 			]);
 		} else {
 			$this->db->where('std_id', $user_id);
@@ -146,12 +136,6 @@ class Request_internship_model extends CI_Model
 				'std_id' => $user_id, 
 				'parent_comment' => $in->parent,
 				'parent_img' => $this->_uploadimg('parent_signature'),
-				'department_comment' => null,
-				'department_img' => null,
-				'Counselor_comment' => null,
-				'Counselor_img' => null,
-				'during_day' => null,
-				'up_day' => null
 			]);
 		}
 		

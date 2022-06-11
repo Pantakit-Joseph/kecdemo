@@ -1,0 +1,76 @@
+$margin-page: 1cm 1.34cm 0.5cm 1.25cm;
+$font-s-h: 18pt;
+$font-s: 16pt;
+@import "print";
+
+body {
+    line-height: 1.5;
+}
+
+.indent {
+    text-indent: 2em;
+}
+
+li::marker {
+    content: attr(data-icon);
+    font-size: 1em;
+}
+
+.map-box {
+    margin: 0.5em 0 5em 0;
+    height: 20em;
+    border: 1px solid #000;
+}
+
+.data {
+    position: absolute;
+    width: 210mm - 1.34cm - 1.25cm;
+    height: 297mm - 1cm - 0.5cm;
+    margin: 0;
+    z-index: 999;
+    overflow: hidden;
+    word-wrap: normal;
+
+    // background-color: rgba(#ffff00, 0.2)
+    div {
+        position: absolute;
+    }
+}
+
+.mt {
+	margin-top: 1em;
+}
+
+.signature {
+	// background-color: red;
+	display: inline-block;
+
+	img {
+		max-width: 100%;
+		max-height: 100%;
+	}
+}
+
+.text-right {
+	text-align: right;
+}
+
+.b {
+	font-weight: bold;
+}
+
+.lh-1-5 {
+	line-height: 1.5;
+}
+.lh-1 {
+	line-height: 1;
+}
+
+.ts-8 {
+	size: 8pt;
+}
+
+.line {
+	line-height: 2;
+	font-size: 18pt;
+}
