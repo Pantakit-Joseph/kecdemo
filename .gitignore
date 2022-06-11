@@ -147,3 +147,4 @@ application/config/production/
 !assets/vendor/
 
 storage/*
+!storage/.gitignore
