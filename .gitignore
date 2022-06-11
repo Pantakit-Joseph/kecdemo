@@ -145,3 +145,5 @@ application/logs/*
 application/config/production/
 
 !assets/vendor/
+
+storage/*

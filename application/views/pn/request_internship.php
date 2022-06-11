@@ -24,63 +24,167 @@ defined('BASEPATH') or exit('No direct script access allowed');
 
 			</div>
 			<div class="bg" style="width: 50mm; top: 42.5mm; left: 133mm;">
-				<?= isset($in['code']) ? $in['code'] : '' ?>
+				<?= isset($in['std_code']) ? $in['std_code'] : '' ?>
 			</div>
 			<div class="bg" style="width: 5mm; top: 50mm; left: 23mm;">
-				<?= '' ?>
+				<?= isset($in['class']) && $in['class'] == 'ปวช' ? '&check;' : '' ?>
 				<!-- ปวช -->
 			</div>
 			<div class="bg" style="width: 5mm; top: 50mm; left: 36mm;">
-				<?= '' ?>
+				<?= isset($in['class']) && $in['class'] == 'ปวส' ? '&check;' : '' ?>
 				<!-- ปวส -->
 			</div>
 			<div class="bg text-center" style="width: 7mm; top: 50mm; left: 53mm;">
-				<?= isset($in['group']) ? $in['group'] : '' ?>
+				<?= '' ?>
 			</div>
 			<div class="bg" style="width: 7mm; top: 50mm; left: 67mm;">
-				<?= isset($in['dep']) ? $in['dep'] : '' ?>
+				<?= isset($in['group']) ? $in['group'] : '' ?>
 			</div>
 			<div class="bg" style="width: 50mm; top: 50mm; left: 92mm;">
-				<?= '' ?>
+				<?php
+				if (isset($in['dep'])) {
+					$dep = $this->db->get_where('majors', ['id' => $in['dep']])->row();
+					echo isset($dep->major_name) ? $dep->major_name : '';
+				}
+				?>
 			</div>
 			<div class="bg" style="width: 50mm; top: 50mm; left: 140mm;">
-				<?= '' ?>
+				<?php
+				if (isset($in['minor'])) {
+					$minor = $this->db->get_where('minors', ['id' => $in['minor']])->row();
+					echo isset($minor->minor_name) ? $minor->minor_name : '';
+				}
+				?>
 			</div>
 			<div class="bg" style="width: 50mm; top: 57mm; left: 38mm;">
-				<?= '' ?>
+				<?= isset($in['grade']) ? $in['grade'] : '' ?>
 			</div>
 			<div class="bg" style="width: 50mm; top: 57mm; left: 109mm;">
-				<?= '' ?>
+				<?php
+				if (!empty($in['year_form'])) {
+					echo explode('/', $in['year_form'])[0];
+				}
+				?>
 			</div>
-			<div class="bg" style="width: 50mm; top: 57mm; left: 109mm;">
-				<?= '' ?>
+			<div class="bg" style="width: 50mm; top: 57mm; left: 118mm;">
+				<?php
+				if (!empty($in['year_form'])) {
+					echo explode('/', $in['year_form'])[1];
+				}
+				?>
+			</div>
+			<div class="bg" style="width: 50mm; top: 57mm; left: 149mm;">
+				<?php
+				if (!empty($in['year_to'])) {
+					echo explode('/', $in['year_form'])[0];
+				}
+				?>
+			</div>
+			<div class="bg" style="width: 50mm; top: 57mm; left: 158mm;">
+				<?php
+				if (!empty($in['year_to'])) {
+					echo explode('/', $in['year_form'])[1];
+				}
+				?>
+			</div>
+			<div class="bg" style="width: 50mm; top: 64mm; left: 20mm;">
+				<?php
+				if (!empty($in['date_form'])) {
+					echo $this->sawasdee->toThaiDateTime($in['date_form'], '%d %m %y');
+				}
+				?>
+			</div>
+			<div class="bg" style="width: 50mm; top: 64mm; left: 75mm;">
+				<?php
+				if (!empty($in['date_to'])) {
+					echo $this->sawasdee->toThaiDateTime($in['date_to'], '%d %m %y');
+				}
+				?>
 			</div>
 
+			<!-- หาสถานที่ฝึกอาชีพเอง -->
+			<?php
+			if (!empty($in['location'])) {
+				if (!empty($in['location'] && $in['location'] == '1')) { ?>
+					<div class="bg" style="width: 50mm; top: 71mm; left: 99mm;">
+						<?= isset($in['name_lo']) ? $in['name_lo'] : '' ?>
+					</div>
+					<div class="bg" style="width: 50mm; top: 78mm; left: 40mm;">
+						<?= isset($in['position']) ? $in['position'] : '' ?>
+					</div>
+					<div class="bg" style="width: 50mm; top: 78mm; left: 122mm;">
+						<?= isset($in['number']) ? $in['number'] : '' ?>
+					</div>
+					<div class="bg" style="width: 50mm; top: 78mm; left: 140mm;">
+						<?= isset($in['road']) ? $in['road'] : '' ?>
+					</div>
+					<div class="bg" style="width: 50mm; top: 85mm; left: 10mm;">
+						<?= isset($in['sub_district']) ? $in['sub_district'] : '' ?>
+					</div>
+					<div class="bg" style="width: 50mm; top: 85mm; left: 65mm;">
+						<?= isset($in['district']) ? $in['district'] : '' ?>
+					</div>
+					<div class="bg" style="width: 50mm; top: 85mm; left: 127mm;">
+						<?= isset($in['provice']) ? $in['provice'] : '' ?>
+					</div>
+					<div class="bg" style="width: 50mm; top: 92mm; left: 23mm;">
+						<?= isset($in['code_p']) ? $in['code_p'] : '' ?>
+					</div>
+					<div class="bg" style="width: 50mm; top: 92mm; left: 62mm;">
+						<?= isset($in['tel']) ? $in['tel'] : '' ?>
+					</div>
+			<?php
+				}
+			}
+			?>
 
-			<div class="bg" style="width: 50mm; top: 70.5mm; left: 92mm;">
-				<?= '' ?>
+
+			<!-- ให้วิทยาลัยหาสถานที่ฝึกอาชีพให้ -->
+			<?php
+			if (!empty($in['location'])) {
+				if (!empty($in['location'] && $in['location'] == '2')) {
+			?>
+					<div class="bg" style="width: 50mm; top: 99mm; left: 111mm;">
+						<?= isset($in['name_lo']) ? $in['name_lo'] : '' ?>
+					</div>
+					<div class="bg" style="width: 50mm; top: 106mm; left: 9mm;">
+						<?= isset($in['number']) ? $in['number'] : '' ?>
+					</div>
+					<div class="bg" style="width: 50mm; top: 106mm; left: 37mm;">
+						<?= isset($in['road']) ? $in['road'] : '' ?>
+					</div>
+					<div class="bg" style="width: 50mm; top: 106mm; left: 87mm;">
+						<?= isset($in['sub_district']) ? $in['sub_district'] : '' ?>
+					</div>
+					<div class="bg" style="width: 50mm; top: 106mm; left: 132mm;">
+						<?= isset($in['district']) ? $in['district'] : '' ?>
+					</div>
+					<div class="bg" style="width: 50mm; top: 113mm; left: 13mm;">
+						<?= isset($in['provice']) ? $in['provice'] : '' ?>
+					</div>
+					<div class="bg" style="width: 50mm; top: 113mm; left: 74mm;">
+						<?= isset($in['code_p']) ? $in['code_p'] : '' ?>
+					</div>
+					<div class="bg" style="width: 50mm; top: 113mm; left: 113mm;">
+						<?= isset($in['tel']) ? $in['tel'] : '' ?>
+					</div>
+
+			<?php
+				}
+			}
+			?>
+
+			<!-- ลายเซ็นต์ นร -->
+			<div class="bg" style="width: 50mm; top: 134mm; left: 90mm;">
+				<?= (isset($in['title']) ? $in['title'] : '') . (isset($in['firstname']) ? $in['firstname'] : '') . ' ' . (isset($in['lastname']) ? $in['lastname'] : '') ?>
 			</div>
-			<div class="bg text-center" style="width: 10mm; top: 78mm; left: 106mm;">
-				<?= '' ?>
+			<div class="bg signature text-center" style="width: 50mm; height: 13mm; top: 119mm; left: 93mm;">
+				<?php
+				$sign_std = $this->db->get_where('users', ['std_id' => $in['std_code']])->row();
+				?>
+				<img src="<?= base_url('storage/' . (isset($sign_std->std_img) ? $sign_std->std_img : '')) ?>" alt="" class="">
 			</div>
-			<div class="bg text-center" style="width: 12mm; top: 78mm; left: 116mm;">
-				<?= '' ?>
-			</div>
-			<div class="bg text-center" style="width: 10mm; top: 78mm; left: 146mm;">
-				<?= '' ?>
-			</div>
-			<div class="bg text-center" style="width: 12mm; top: 78mm; left: 157mm;">
-				<?= '' ?>
-			</div>
-			<div class="bg text-center" style="width: 43mm; top: 85mm; left: 19mm;">
-				<?= '' ?>
-			</div>
-			<div class="bg text-center" style="width: 43mm; top: 85mm; left: 75mm;">
-				<?= '' ?>
-			</div>
-			<div class="bg text-center" style="width: 80mm; top: 92mm; left: 98mm;">
-				<?= '' ?>
-			</div>
+
 		</div>
 		<div class="text-center font-s-h">
 			<b>
