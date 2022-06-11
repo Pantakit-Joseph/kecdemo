@@ -29,6 +29,10 @@
 		<div class="container">
 
 			<div class="card o-hidden border-0 shadow-lg my-5">
+				<!-- <pre>
+					<?php //var_dump($index); 
+					?>
+				</pre> -->
 				<div class="card-body p-0">
 					<!-- Nested Row within Card Body -->
 					<div class="row">
@@ -38,44 +42,64 @@
 								<div class="text-center">
 									<h1 class="h4 text-gray-900 mb-4">หนังสือคำร้องขอฝึกอาชีพในสถานประกอบการ</h1>
 								</div>
-								<form class="user" action="<?= site_url('pn/request_internship') ?>" method="post" enctype="multipart/form-data">
+
+								<form class="user" action="<?= site_url('form/request_internship/submit') ?>" method="POST" enctype="multipart/form-data">
 									<div class="form-group row">
 										<div class="col-sm-4 mb-3 mb-sm-0">
-											<input type="text" class="form-control form-control-user" name="title" placeholder="คำนำหน้า">
+											<select class="form-control" name="title" id="title" placeholder="คำนำหน้า">
+												<option value="" selected>คำนำหน้า</option>
+												<option value="นาย">นาย</option>
+												<option value="นาย">นาง</option>
+												<option value="นางสาว">นางสาว</option>
+											</select>
+											<!-- <input type="text" class="form-control form-control-user" name="title" placeholder="คำนำหน้า"> -->
 										</div>
 										<div class="col-sm-4 mb-3 mb-sm-0">
-											<input type="text" class="form-control form-control-user" name="FirstName" placeholder="ชื่อ">
+											<input type="text" class="form-control form-control-user" name="firstname" placeholder="ชื่อ">
 										</div>
 										<div class="col-sm-4">
-											<input type="text" class="form-control form-control-user" name="LastName" placeholder="นามสกุล">
+											<input type="text" class="form-control form-control-user" name="lastname" placeholder="นามสกุล">
 										</div>
 									</div>
 
 									<div class="form-group row">
-										<div class="col-sm-6 mb-3 mb-sm-0">
-											<input type="text" class="form-control form-control-user" name="code" placeholder="รหัสประจำตัว">
+										<div class="col-sm-4 mb-4 mb-sm-0">
+											<input type="number" class="form-control form-control-user" name="std_code" placeholder="รหัสประจำตัวนักศึกษา">
 										</div>
-										<div class="col-sm-3 mb-3 mb-sm-0">
-											<input type="text" class="form-control form-control-user" name="class" placeholder="ระดับชั้น">
+										<div class="col-sm-4 mb-4 mb-sm-0">
+											<select class="form-control" name="class" id="class" placeholder="ระดับชั้น">
+												<option value="" selected>ระดับชั้น</option>
+												<option>ปวช</option>
+												<option>ปวส</option>
+											</select>
+											<!-- <input type="text" class="form-control form-control-user" name="class" placeholder="ระดับชั้น"> -->
 										</div>
-										<div class="col-sm-3 mb-3 mb-sm-0">
+										<div class="col-sm-4 mb-4 mb-sm-0">
 											<input type="text" class="form-control form-control-user" name="group" placeholder="กลุ่ม">
 										</div>
 									</div>
 
 									<div class="form-group row">
 										<div class="col-sm-4 mb-3 mb-sm-0">
-											<select name="dep" class="form-control form-control-user">
-												<option value="">เทคนิคเครื่องกล</option>
+											<select class="form-control" name="dep" id="dep" placeholder="แผนกวิชา">
+												<option value="" selected>แผนกวิชา</option>
+												<?php foreach ($index->majors as $major) { ?>
+													<option value="<?= $major->id ?>"><?= $major->major_name ?></option>
+												<?php } ?>
 											</select>
-											<!-- <input type="text" class="form-control form-control-user"  name="dep"
-										placeholder="แผนกวิชา">                                            -->
+											<!-- <input type="text" class="form-control form-control-user" name="dep" placeholder="แผนกวิชา"> -->
 										</div>
 										<div class="col-sm-4 mb-3 mb-sm-0">
-											<input type="text" class="form-control form-control-user" name="minor" placeholder="สาขางาน">
+											<select class="form-control" name="minor" id="minor" placeholder="สาขางาน">
+												<option value="" selected>สาขางาน</option>
+												<?php foreach ($index->minors as $minor) { ?>
+													<option value="<?= $minor->id ?>"><?= $minor->minor_name ?></option>
+												<?php } ?>
+											</select>
+											<!-- <input type="text" class="form-control form-control-user" name="minor" placeholder="สาขางาน"> -->
 										</div>
 										<div class="col-sm-4 mb-3 mb-sm-0">
-											<input type="text" class="form-control form-control-user" name="grade" placeholder="ผลการเรียน">
+											<input type="number" class="form-control form-control-user" name="grade" placeholder="ผลการเรียน">
 										</div>
 									</div>
 
@@ -83,10 +107,22 @@
 									<p>มีความประสงค์ขอฝึกงาน</p>
 									<div class="form-group row">
 										<div class="col-sm-6 mb-3 mb-sm-0">
-											จาก <input type="text" class="form-control form-control-user" name="year_form" placeholder="ภาคเรียนที่">
+											<select class="form-control" name="year_form" id="year_form" placeholder="ภาคเรียนที่">
+												<option value="" selected>ภาคเรียนที่</option>
+												<?php foreach ($index->years as $year) { ?>
+													<option value="<?= $year ?>"><?= $year ?></option>
+												<?php } ?>
+											</select>
+											<!-- จาก <input type="text" class="form-control form-control-user" name="year_form" placeholder="ภาคเรียนที่"> -->
 										</div>
 										<div class="col-sm-6 mb-3 mb-sm-0">
-											ถึง <input type="text" class="form-control form-control-user" name="year_to" placeholder="ภาคเรียนที่">
+											<select class="form-control" name="year_to" id="year_to" placeholder="ภาคเรียนที่">
+												<option value="" selected>ภาคเรียนที่</option>
+												<?php foreach ($index->years as $year) { ?>
+													<option value="<?= $year ?>"><?= $year ?></option>
+												<?php } ?>
+											</select>
+											<!-- ถึง <input type="text" class="form-control form-control-user" name="year_to" placeholder="ภาคเรียนที่"> -->
 										</div>
 									</div>
 
@@ -102,13 +138,18 @@
 									<div>สถานที่ฝึกอาชีพ</div>
 									<div class="form-group row">
 										<div class="col-sm-6 mb-3 mb-sm-0 ">
-											<input type="radio" name="location"> หาสถานที่ฝึกอาชีพเอง
+											<input type="radio" name="location" value="1"> หาสถานที่ฝึกอาชีพเอง
 										</div>
 										<div class="col-sm-6 mb-3 mb-sm-0 ">
-											<input type="radio" name="location"> ให้วิทยาลัยหาสถานที่ฝึกอาชีพให้
+											<input type="radio" name="location" value="2"> ให้วิทยาลัยหาสถานที่ฝึกอาชีพให้
 										</div>
 									</div>
 									<hr>
+									<div class="form-group row">
+										<div class="col-12">
+											<input type="text" class="form-control form-control-user" name="name_lo" placeholder="ชื่อสถานประกอบการ">
+										</div>
+									</div>
 									<div class="form-group row">
 										<div class="col-sm-6 mb-3 mb-sm-0">
 											<input type="text" class="form-control form-control-user" name="position" placeholder="ตำแหน่งผู้ที่ติดต่อ.">
@@ -120,10 +161,10 @@
 
 									<div class="form-group row">
 										<div class="col-sm-6 mb-3 mb-sm-0">
-											<input type="text" class="form-control form-control-user" name="position" placeholder="ถนน">
+											<input type="text" class="form-control form-control-user" name="road" placeholder="ถนน">
 										</div>
 										<div class="col-sm-6">
-											<input type="text" class="form-control form-control-user" name="number" placeholder="ตำบล">
+											<input type="text" class="form-control form-control-user" name="sub_district" placeholder="ตำบล">
 										</div>
 									</div>
 
@@ -138,10 +179,10 @@
 
 									<div class="form-group row">
 										<div class="col-sm-6 mb-3 mb-sm-0">
-											<input type="text" class="form-control form-control-user" name="post" placeholder="รหัสไปรษณีย์">
+											<input type="number" class="form-control form-control-user" name="code_p" placeholder="รหัสไปรษณีย์">
 										</div>
 										<div class="col-sm-6">
-											<input type="text" class="form-control form-control-user" name="tel" placeholder="เบอร์โทรศัพท์">
+											<input type="tel" class="form-control form-control-user" name="tel" placeholder="เบอร์โทรศัพท์">
 										</div>
 									</div>
 									<hr>
@@ -151,11 +192,11 @@
 									</div>
 									<div class="form-group">
 										<p class="custom-file-input-label">ลายเซ็นต์ผู้ปกครอง</p>
-										<input type="file" class="form-control form-control-file " name="parent_signature">
+										<input type="file" class="form-control form-control-file" name="parent_signature">
 									</div>
 
 									<hr>
-									<p>ความเห็นครูที่ปรึกษา</p>
+									<!-- <p>ความเห็นครูที่ปรึกษา</p>
 									<div class="form-group row">
 										<div class="col-sm-4 mb-3 mb-sm-0">
 											<div class="custom-control custom-checkbox small">
@@ -195,16 +236,16 @@
 										</div>
 									</div>
 									<div class="form-group">
+
 										<p class="custom-file-input-label">ลายเซ็นต์หัวหน้าแผนกวิชา</p>
 										<input type="file" class="form-control form-control-file " name="parent_teacher1">
-									</div>
+									</div> -->
 
-									<button type="submit" class="btn btn-primary btn-user btn-block">
+									<button class="btn btn-primary btn-user btn-block" type="submit">
 										ส่งหนังสือคำร้อง
 									</button>
 									<hr>
 								</form>
-								<hr>
 
 							</div>
 						</div>
