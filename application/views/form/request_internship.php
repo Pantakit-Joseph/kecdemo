@@ -64,7 +64,7 @@
 
 									<div class="form-group row">
 										<div class="col-sm-4 mb-4 mb-sm-0">
-											<input type="number" class="form-control form-control-user" name="std_code" placeholder="รหัสประจำตัวนักศึกษา">
+											<input type="number" class="form-control form-control-user" name="std_code" placeholder="รหัสประจำตัวนักศึกษา" required>
 										</div>
 										<div class="col-sm-4 mb-4 mb-sm-0">
 											<select class="form-control" name="class" id="class" placeholder="ระดับชั้น">
@@ -186,13 +186,17 @@
 										</div>
 									</div>
 									<hr>
+									<div class="form-group">
+										<p class="custom-file-input-label">ลายเซ็นต์นักเรียน/นักศึกษา</p>
+										<input type="file" class="form-control form-control-file" name="std_signature" accept="image/png, image/jpeg">
+									</div>
 									<p>ความเห็นผู้ปกครอง</p>
 									<div class="form-group">
 										<input type="text" class="form-control form-control-user" name="parent" placeholder="ความเห็นผู้ปกครอง">
 									</div>
 									<div class="form-group">
 										<p class="custom-file-input-label">ลายเซ็นต์ผู้ปกครอง</p>
-										<input type="file" class="form-control form-control-file" name="parent_signature">
+										<input type="file" class="form-control form-control-file" name="parent_signature" accept="image/png, image/jpeg">
 									</div>
 
 									<hr>

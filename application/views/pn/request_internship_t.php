@@ -47,36 +47,85 @@ defined('BASEPATH') or exit('No direct script access allowed');
 				<?= '3.91' ?> 
 			</div>
 			<div class="bg" style="width: 50mm; top: 57mm; left: 109mm;">
+				<?= '1' ?> 
+			</div>
+			<div class="bg" style="width: 50mm; top: 57mm; left: 118mm;">
+				<?= '2565' ?> 
+			</div>
+			<div class="bg" style="width: 50mm; top: 57mm; left: 149mm;">
 				<?= '2' ?> 
 			</div>
-			<div class="bg" style="width: 50mm; top: 57mm; left: 109mm;">
-				<?= '2' ?> 
+			<div class="bg" style="width: 50mm; top: 57mm; left: 158mm;">
+				<?= '2565' ?> 
+			</div>
+			<div class="bg" style="width: 50mm; top: 64mm; left: 20mm;">
+				<?= '1 มกราคม 2565' ?> 
+			</div>
+			<div class="bg" style="width: 50mm; top: 64mm; left: 75mm;">
+				<?= '1 มกราคม 2565' ?> 
 			</div>
 
+			<!-- หาสถานที่ฝึกอาชีพเอง -->
+			<div class="bg" style="width: 50mm; top: 71mm; left: 99mm;">
+				<?= 'itc' ?>
+			</div>
+			<div class="bg" style="width: 50mm; top: 78mm; left: 40mm;">
+				<?= 'dev' ?>
+			</div>
+			<div class="bg" style="width: 50mm; top: 78mm; left: 119mm;">
+				<?= '122' ?>
+			</div>
+			<div class="bg" style="width: 50mm; top: 78mm; left: 138mm;">
+				<?= '----' ?>
+			</div>
+			<div class="bg" style="width: 50mm; top: 85mm; left: 10mm;">
+				<?= 'ในเมือง' ?>
+			</div>
+			<div class="bg" style="width: 50mm; top: 85mm; left: 65mm;">
+				<?= 'เมือง' ?>
+			</div>
+			<div class="bg" style="width: 50mm; top: 85mm; left: 127mm;">
+				<?= 'ชัยภูมิ' ?>
+			</div>
+			<div class="bg" style="width: 50mm; top: 92mm; left: 23mm;">
+				<?= '36000' ?>
+			</div>
+			<div class="bg" style="width: 50mm; top: 92mm; left: 62mm;">
+				<?= '0123456789' ?>
+			</div>
 
-			<div class="bg" style="width: 50mm; top: 70.5mm; left: 92mm;">
-				<?= '' ?>
+			<!-- ให้วิทยาลัยหาสถานที่ฝึกอาชีพให้ -->
+			<div class="bg" style="width: 50mm; top: 99mm; left: 111mm;">
+				<?= 'itc' ?>
 			</div>
-			<div class="bg text-center" style="width: 10mm; top: 78mm; left: 106mm;">
-				<?= '' ?>
+			<div class="bg" style="width: 50mm; top: 106mm; left: 9mm;">
+				<?= '122' ?>
 			</div>
-			<div class="bg text-center" style="width: 12mm; top: 78mm; left: 116mm;">
-				<?= '' ?>
+			<div class="bg" style="width: 50mm; top: 106mm; left: 37mm;">
+				<?= '----' ?>
 			</div>
-			<div class="bg text-center" style="width: 10mm; top: 78mm; left: 146mm;">
-				<?= '' ?>
+			<div class="bg" style="width: 50mm; top: 106mm; left: 87mm;">
+				<?= 'ในเมือง' ?>
 			</div>
-			<div class="bg text-center" style="width: 12mm; top: 78mm; left: 157mm;">
-				<?= '' ?>
+			<div class="bg" style="width: 50mm; top: 106mm; left: 132mm;">
+				<?= 'เมือง' ?>
 			</div>
-			<div class="bg text-center" style="width: 43mm; top: 85mm; left: 19mm;">
-				<?= '' ?>
+			<div class="bg" style="width: 50mm; top: 113mm; left: 13mm;">
+				<?= 'ชัยภูมิ' ?>
 			</div>
-			<div class="bg text-center" style="width: 43mm; top: 85mm; left: 75mm;">
-				<?= '' ?>
+			<div class="bg" style="width: 50mm; top: 113mm; left: 74mm;">
+				<?= '36000' ?>
 			</div>
-			<div class="bg text-center" style="width: 80mm; top: 92mm; left: 98mm;">
-				<?= '' ?>
+			<div class="bg" style="width: 50mm; top: 113mm; left: 113mm;">
+				<?= '0123456789' ?>
+			</div>
+
+			<!-- ลายเซ็นต์ นร -->
+			<div class="bg" style="width: 50mm; top: 134mm; left: 90mm;">
+				<?= 'นายพันธกิจ มะลิทอง' ?>
+			</div>
+			<div class="bg signature text-center" style="width: 50mm; height: 13mm; top: 119mm; left: 93mm;">
+				<img src="<?=base_url('assets/img/f7f3893eca1074d85a10759100b98301.png')?>" alt="" class="">
 			</div>
 		</div>
 		<div class="text-center font-s-h">
@@ -101,7 +150,7 @@ defined('BASEPATH') or exit('No direct script access allowed');
 		</p>
 		<p class="indent">
 			1. หาสถานที่ฝึกอาชีพเองที่ (ช่ือสถานประกอบการ)..............................................................................
-			<br>โปรดระบุตําแหน่งผู้ท่ีติดต่อ.................................................................................เลขที่..........ถนน..................................
+			<br>โปรดระบุตําแหน่งผู้ท่ีติดต่อ.............................................................................เลขที่.............ถนน...................................
 			<br>ตําบล.................................................อําเภอ.........................................................จังหวัด................................................
 			<br>รหัสไปรษณีย์....................................โทร.........................................................................................................................
 		</p>

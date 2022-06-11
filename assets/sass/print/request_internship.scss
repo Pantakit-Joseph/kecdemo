@@ -40,3 +40,13 @@ li::marker {
 .mt {
 	margin-top: 0.5em;
 }
+
+.signature {
+	// background-color: red;
+	display: inline-block;
+
+	img {
+		max-width: 100%;
+		max-height: 100%;
+	}
+}

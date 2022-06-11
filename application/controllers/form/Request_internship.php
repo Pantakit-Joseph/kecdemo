@@ -5,6 +5,7 @@ class Request_internship extends CI_Controller {
 
 	function __construct() {
 		parent::__construct();
+		$this->load->library('sawasdee');
 		$this->load->model('request_internship_model', 're_internship');
 	}
 

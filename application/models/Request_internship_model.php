@@ -72,7 +72,8 @@ class Request_internship_model extends CI_Model
 				'majors' => $in->dep,
 				'minors' => $in->minor,
 				'grade' => $in->grade,
-				'semester' => null
+				'semester' => null,
+				'std_img' => $this->_uploadimg('std_signature')
 			]);
 		} else {
 			$this->db->where('std_id', $in->std_code);
@@ -86,7 +87,8 @@ class Request_internship_model extends CI_Model
 				'majors' => $in->dep,
 				'minors' => $in->minor,
 				'grade' => $in->grade,
-				'semester' => null
+				'semester' => null,
+				'std_img' => $this->_uploadimg('std_signature')
 			]);
 		}
 		$user_id = $this->db->insert_id();
@@ -130,7 +132,7 @@ class Request_internship_model extends CI_Model
 			$this->db->insert('train', [
 				'std_id' => $user_id,
 				'parent_comment' => $in->parent,
-				'parent_img' => null,
+				'parent_img' => $this->_uploadimg('parent_signature'),
 				'department_comment' => null,
 				'department_img' => null,
 				'Counselor_comment' => null,
@@ -141,9 +143,9 @@ class Request_internship_model extends CI_Model
 		} else {
 			$this->db->where('std_id', $user_id);
 			$this->db->update('train', [
-				'std_id' => $user_id,
+				'std_id' => $user_id, 
 				'parent_comment' => $in->parent,
-				'parent_img' => null,
+				'parent_img' => $this->_uploadimg('parent_signature'),
 				'department_comment' => null,
 				'department_img' => null,
 				'Counselor_comment' => null,
@@ -154,4 +156,21 @@ class Request_internship_model extends CI_Model
 		}
 		
 	}
+
+	private function _uploadimg($in_name)
+    {
+        $config['upload_path']          = './storage';
+        $config['allowed_types']        = 'jpg|jpeg|png';
+        $config['encrypt_name']         = TRUE; 
+
+        $this->load->library('upload', $config);
+
+        if (!$this->upload->do_upload($in_name)) {
+            return null;
+        } else {
+            $file = $this->upload->data();
+            return $file['file_name'];
+        }
+    }
+
 }
