@@ -20,7 +20,7 @@ defined('BASEPATH') or exit('No direct script access allowed');
 		<div class="data">
 			<!-- ข้อมูลนักเรียน -->
 			<div class="bg" style="width: 50mm; top: 42.5mm; left: 55mm;">
-				<?= (isset($in['title']) ? $in['title'] : '') . (isset($in['FirstName']) ? $in['FirstName'] : '') . ' ' . (isset($in['LastName']) ? $in['LastName'] : '') ?>
+				<?= (isset($in['title']) ? $in['title'] : '') . (isset($in['firstname']) ? $in['firstname'] : '') . ' ' . (isset($in['lastname']) ? $in['lastname'] : '') ?>
 
 			</div>
 			<div class="bg" style="width: 50mm; top: 42.5mm; left: 133mm;">
