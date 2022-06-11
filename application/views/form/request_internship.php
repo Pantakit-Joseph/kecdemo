@@ -99,7 +99,7 @@
 											<!-- <input type="text" class="form-control form-control-user" name="minor" placeholder="สาขางาน"> -->
 										</div>
 										<div class="col-sm-4 mb-3 mb-sm-0">
-											<input type="number" class="form-control form-control-user" name="grade" placeholder="ผลการเรียน">
+											<input type="number" class="form-control form-control-user" step="0.01" name="grade" placeholder="ผลการเรียน">
 										</div>
 									</div>
 
