@@ -148,3 +148,7 @@ application/config/production/
 
 storage/*
 !storage/.gitignore
+
+robot/*
+!robot/*.robot
+!robot/assets/

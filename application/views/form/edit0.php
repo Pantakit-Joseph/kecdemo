@@ -15,7 +15,7 @@
 	<link href="<?= base_url('assets/css/sb-admin-2.min.css') ?>" rel="stylesheet">
 	<style>
 		.bg-register-image {
-			background: url("<?= base_url('assets/img/caleb-george-5sF6NrB1MEg-unsplash.jpg') ?>");
+			background: url("<?= base_url('assets/img/photo-1650646002407-f8b4537c1cce.jpeg') ?>");
 			background-position: center;
 			background-size: cover;
 		}
