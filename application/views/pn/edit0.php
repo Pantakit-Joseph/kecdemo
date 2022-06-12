@@ -17,9 +17,101 @@ defined('BASEPATH') or exit('No direct script access allowed');
 
 <body>
 	<div class="pagebreak">
-		<!-- <div class="data">
-			
-		</div> -->
+		<div class="data">
+			<!-- ส่วนที่ 1 -->
+			<div class="bg text-center" style="width: 50mm; top: 50mm; left: 45mm;">
+				<?= (isset($in['title']) ? $in['title'] : '') . (isset($in['firstname']) ? $in['firstname'] : '') . ' ' . (isset($in['lastname']) ? $in['lastname'] : '') ?>
+			</div>
+			<div class="bg text-center" style="width: 50mm; top: 50mm; left: 133mm;">
+				<?= isset($in['std_code']) ? $in['std_code'] : '' ?>
+			</div>
+			<div class="bg text-center" style="width: 20mm; top: 58.5mm; left: 45mm;">
+				<?= isset($in['class']) ? $in['class'] : '' ?>
+			</div>
+			<div class="bg" style="width: 38mm; top: 58.5mm; left: 79mm;">
+				<?php
+				if (isset($in['dep'])) {
+					$dep = $this->db->get_where('majors', ['id' => $in['dep']])->row();
+					echo isset($dep->major_name) ? $dep->major_name : '';
+				}
+				?>
+			</div>
+			<div class="bg text-center" style="width: 20mm; top: 58.5mm; left: 128mm;">
+				<?= isset($in['year']) ? $in['year'] : '' ?>
+			</div>
+			<div class="bg text-center" style="width: 20mm; top: 58.5mm; left: 157mm;">
+				<?= isset($in['group']) ? $in['group'] : '' ?>
+			</div>
+
+			<div class="bg text-center" style="width: 30mm; top: 67mm; left: 101mm;">
+				<?= isset($in['term']) ? $in['term'] : '' ?>
+			</div>
+			<div class="bg text-center" style="width: 30mm; top: 67mm; left: 152mm;">
+				<?= isset($in['year0']) ? $in['year0'] : '' ?>
+			</div>
+			<div class="bg" style="width: 43mm; top: 75.5mm; left: 6mm;">
+				<?= isset($in['subject']) ? $in['subject'] : '' ?>
+			</div>
+			<div class="bg text-center" style="width: 32mm; top: 75.5mm; left: 62mm;">
+				<?= isset($in['subject_code']) ? $in['subject_code'] : '' ?>
+			</div>
+			<div class="bg text-center" style="width: 16mm; top: 75.5mm; left: 118mm;">
+				<?= isset($in['unit']) ? $in['unit'] : '' ?>
+			</div>
+			<div class="bg" style="width: 40mm; top: 75.5mm; left: 153mm;">
+				<?= (isset($in['title_te']) ? $in['title_te'] : '') . (isset($in['firstname_te']) ? $in['firstname_te'] : '') . ' ' . (isset($in['lastname_te']) ? $in['lastname_te'] : '') ?>
+			</div>
+
+			<div class="bg signature text-center" style="width: 42mm; height: 13mm; top: 98.8mm; left: 108mm;">
+				<?php
+				$sign_std = $this->db->get_where('users', ['std_id' => $in['std_code']])->row();
+				?>
+				<img src="<?= base_url('storage/' . (isset($sign_std->std_img) ? $sign_std->std_img : '')) ?>" alt="" class="">
+			</div>
+			<div class="bg text-center" style="width: 53mm; top: 115mm; left: 103mm;">
+				<?= (isset($in['title']) ? $in['title'] : '') . (isset($in['firstname']) ? $in['firstname'] : '') . ' ' . (isset($in['lastname']) ? $in['lastname'] : '') ?>
+			</div>
+
+			<!-- ส่วนที่ 2 -->
+			<div class="bg text-center" style="width: 58mm; top: 153mm; left: 42mm;">
+				<?= (isset($in['title']) ? $in['title'] : '') . (isset($in['firstname']) ? $in['firstname'] : '') . ' ' . (isset($in['lastname']) ? $in['lastname'] : '') ?>
+			</div>
+			<div class="bg text-center" style="width: 38mm; top: 153mm; left: 146mm;">
+				<?= isset($in['std_code']) ? $in['std_code'] : '' ?>
+			</div>
+			<div class="bg text-center" style="width: 20mm; top: 161.5mm; left: 44mm;">
+				<?= isset($in['class']) ? $in['class'] : '' ?>
+			</div>
+			<div class="bg" style="width: 46mm; top: 161.5mm; left: 79mm;">
+				<?php
+				if (isset($in['dep'])) {
+					echo isset($dep->major_name) ? $dep->major_name : '';
+				}
+				?>
+			</div>
+			<div class="bg text-center" style="width: 20mm; top: 161.5mm; left: 136mm;">
+				<?= isset($in['year']) ? $in['year'] : '' ?>
+			</div>
+			<div class="bg text-center" style="width: 18mm; top: 161.5mm; left: 166mm;">
+				<?= isset($in['group']) ? $in['group'] : '' ?>
+			</div>
+			<div class="bg" style="width: 82mm;top: 170mm; left: 102mm;">
+				<?= isset($in['subject']) ? $in['subject'] : '' ?>
+			</div>
+			<div class="bg text-center" style="width: 20mm; top: 178.5mm; left: 27mm;">
+				<?= isset($in['term']) ? $in['term'] : '' ?>
+			</div>
+			<div class="bg text-center" style="width: 20mm; top: 178.5mm; left: 49mm;">
+				<?= isset($in['year0']) ? $in['year0'] : '' ?>
+			</div>
+
+			<div class="bg signature text-center" style="width: 42mm; height: 13mm; top: 193mm; left: 106mm;">
+				<img src="<?= base_url('storage/' . (isset($sign_std->std_img) ? $sign_std->std_img : '')) ?>" alt="" class="">
+			</div>
+			<div class="bg text-center" style="width: 53mm; top: 209.5mm; left: 104mm;">
+				<?= (isset($in['title']) ? $in['title'] : '') . (isset($in['firstname']) ? $in['firstname'] : '') . ' ' . (isset($in['lastname']) ? $in['lastname'] : '') ?>
+			</div>
+		</div>
 
 		<p class="text-right b lh-1-5">
 			วผ. ๐๘
@@ -91,6 +183,46 @@ defined('BASEPATH') or exit('No direct script access allowed');
 	</div>
 
 	<div class="pagebreak">
+		<div class="data">
+			<div class="bg text-center" style="width: 58mm;top: 16mm;left: 42mm;">
+				<?= (isset($in['title']) ? $in['title'] : '') . (isset($in['firstname']) ? $in['firstname'] : '') . ' ' . (isset($in['lastname']) ? $in['lastname'] : '') ?>
+			</div>
+			<div class="bg text-center" style="width: 37mm;top: 16mm;left: 147mm;">
+				<?= isset($in['std_code']) ? $in['std_code'] : '' ?>
+			</div>
+			<div class="bg text-center" style="width: 20mm;top: 24.5mm;left: 44mm;">
+				<?= isset($in['class']) ? $in['class'] : '' ?>
+			</div>
+			<div class="bg" style="width: 51mm;top: 24.5mm;left: 79mm;">
+				<?php
+				if (isset($in['dep'])) {
+					echo isset($dep->major_name) ? $dep->major_name : '';
+				}
+				?>
+			</div>
+			<div class="bg text-center" style="width: 17mm;top: 24.5mm;left: 141mm;">
+				<?= isset($in['year']) ? $in['year'] : '' ?>
+			</div>
+			<div class="bg text-center" style="width: 19mm;top: 24.5mm;left: 165mm;">
+				<?= isset($in['group']) ? $in['group'] : '' ?>
+			</div>
+			<div class="bg" style="width: 43mm;top: 33mm;left: 145mm;">
+				<?= isset($in['subject']) ? $in['subject'] : '' ?>
+			</div>
+			<div class="bg text-center" style="width: 21mm;top: 41.5mm;left: 26mm;">
+				<?= isset($in['term']) ? $in['term'] : '' ?>
+			</div>
+			<div class="bg text-center" style="width: 18mm;top: 41.5mm;left: 64mm;">
+				<?= isset($in['year0']) ? $in['year0'] : '' ?>
+			</div>
+
+			<!-- <div class="bg signature text-center" style="width: 41mm;height: 15mm;top: 54mm;left: 105mm;">
+				<img src="<?= base_url('assets/img/sign_2.png') ?>" alt="" class="">
+			</div>
+			<div class="bg text-center" style="width: 53mm;top: 73mm;left: 104mm;">
+				<?= 'นายพันธกิจ มะลิทอง' ?>
+			</div> -->
+		</div>
 		<p class="text-right lh-1-5">
 			(ส่วนที่ 3 สำหรับนักเรียนเก็บไว้)
 		</p>

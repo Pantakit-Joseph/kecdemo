@@ -34,6 +34,8 @@ li::marker {
     // background-color: rgba(#ffff00, 0.2)
     div {
         position: absolute;
+		white-space: nowrap; 
+		overflow: hidden;
     }
 }
 
