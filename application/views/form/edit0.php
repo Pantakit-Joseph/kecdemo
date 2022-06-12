@@ -158,10 +158,10 @@
 										</div>
 									</div>
 									<hr>
-									<!-- <div class="form-group">
-										<p class="custom-file-input-label">ลายเซ็นต์ครูที่ปรึกษา</p>
+									<div class="form-group">
+										<p class="custom-file-input-label">ลายเซ็นต์ครูผู้สอน</p>
 										<input type="file" class="form-control form-control-file " name="teacher_signature"  name="parent_signature" accept="image/png, image/jpeg">
-									</div> -->
+									</div>
 
 									<button class="btn btn-primary btn-user btn-block" type="submit">
 										ส่งหนังสือคำร้อง

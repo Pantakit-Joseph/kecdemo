@@ -96,6 +96,7 @@ class Edit0_model extends CI_Model
 		} else {
 			$this->db->where('std_id', $user_id);
 			$this->db->update('edit_grades', [
+				'std_id' => $user_id,
 				'id_subject' => $in->subject_code,
 				'subject' => $in->subject,
 				'term' => $in->term,

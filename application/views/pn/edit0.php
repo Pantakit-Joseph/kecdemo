@@ -216,12 +216,15 @@ defined('BASEPATH') or exit('No direct script access allowed');
 				<?= isset($in['year0']) ? $in['year0'] : '' ?>
 			</div>
 
-			<!-- <div class="bg signature text-center" style="width: 41mm;height: 15mm;top: 54mm;left: 105mm;">
-				<img src="<?= base_url('assets/img/sign_2.png') ?>" alt="" class="">
+			<div class="bg signature text-center" style="width: 41mm;height: 15mm;top: 54mm;left: 105mm;">
+				<?php
+				$edit_grade = $this->db->get_where('edit_grades', ['std_id' => isset($sign_std->id) ? $sign_std->id : null])->row();
+				?>
+				<img src="<?= base_url('storage/' . (isset($edit_grade->img_teacher) ? $edit_grade->img_teacher : '')) ?>" alt="" class="">
 			</div>
 			<div class="bg text-center" style="width: 53mm;top: 73mm;left: 104mm;">
-				<?= 'นายพันธกิจ มะลิทอง' ?>
-			</div> -->
+				<?= (isset($in['title_te']) ? $in['title_te'] : '') . (isset($in['firstname_te']) ? $in['firstname_te'] : '') . ' ' . (isset($in['lastname_te']) ? $in['lastname_te'] : '') ?>
+			</div>
 		</div>
 		<p class="text-right lh-1-5">
 			(ส่วนที่ 3 สำหรับนักเรียนเก็บไว้)

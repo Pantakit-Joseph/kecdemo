@@ -4,7 +4,7 @@ Library           SeleniumLibrary
 
 *** Variables ***
 ${SITE URL}		https://dev.kecdemo.itchaiyaphum.com/
-${BROWSER}		Edge
+${BROWSER}		Firefox
 
 *** Keywords ***
 Open Website
