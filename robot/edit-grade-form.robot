@@ -62,9 +62,12 @@ Input ชื่อครูผู้สอน
 	In Text			name:firstname_te		อลงกรณ์
 	In Text			name:lastname_te		ภูคงคา 
 
-Input ลายเซ็น นร
+Input ลายเซ็น
 	Choose File		name:std_signature		${CURDIR}${/}assets${/}sign_1.png
+	Choose File		name:teacher_signature		${CURDIR}${/}assets${/}sign_3.png
+
+Form Submit
+	Click Button	//button[@type="submit"]
 # Test Close
 # 	Close All Browsers
-
 
