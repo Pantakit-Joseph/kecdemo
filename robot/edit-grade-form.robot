@@ -3,7 +3,8 @@ Documentation     input form internship
 Library           SeleniumLibrary
 
 *** Variables ***
-${SITE URL}		https://dev.kecdemo.itchaiyaphum.com/
+${SITE URL}		http://kecdemo.itchaiyaphum.com/
+# ${SITE URL}		https://dev.kecdemo.itchaiyaphum.com/
 ${BROWSER}		Edge
 
 *** Keywords ***
